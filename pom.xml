@@ -16,510 +16,454 @@
    limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <parent>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-parent</artifactId>
-    <version>47</version>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.apache.commons</groupId>
-  <artifactId>commons-math4</artifactId>
-  <version>4.0-SNAPSHOT</version>
-  <name>Apache Commons Math</name>
+    <parent>
+        <groupId>com.jwebmp.jpms</groupId>
+        <artifactId>jpms-pending-modules</artifactId>
+        <version>0.0.0_0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-  <inceptionYear>2003</inceptionYear>
-  <description>The Apache Commons Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.</description>
+    <groupId>com.jwebmp.jpms.commons</groupId>
+    <artifactId>commons-math4</artifactId>
+    <!--<version>4.0-SNAPSHOT</version>-->
+    <name>Apache Commons Math</name>
+    <packaging>jar</packaging>
 
-  <url>http://commons.apache.org/proper/commons-math/</url>
+    <inceptionYear>2003</inceptionYear>
+    <description>The Apache Commons Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.</description>
 
-  <issueManagement>
-    <system>jira</system>
-    <url>http://issues.apache.org/jira/browse/MATH</url>
-  </issueManagement>
+    <url>http://commons.apache.org/proper/commons-math/</url>
 
-  <scm>
-    <connection>scm:git:http://gitbox.apache.org/repos/asf/commons-math.git</connection>
-    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/commons-math.git</developerConnection>
-    <url>https://gitbox.apache.org/repos/asf?p=commons-math.git</url>
-  </scm>
+    <issueManagement>
+        <system>jira</system>
+        <url>http://issues.apache.org/jira/browse/MATH</url>
+    </issueManagement>
 
-  <distributionManagement>
-    <site>
-      <id>apache.website</id>
-      <name>Apache Commons Site</name>
-      <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-math/</url>
-    </site>
-  </distributionManagement>
+    <scm>
+        <connection>scm:git:http://gitbox.apache.org/repos/asf/commons-math.git</connection>
+        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/commons-math.git</developerConnection>
+        <url>https://gitbox.apache.org/repos/asf?p=commons-math.git</url>
+    </scm>
 
-  <developers>
-    <developer>
-      <name>Mikkel Meyer Andersen</name>
-      <id>mikl</id>
-      <email>mikl at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Bill Barker</name>
-      <id>billbarker</id>
-      <email>billbarker at apache dot org</email>
-    </developer>
-    <developer>
-      <name>S&#233;bastien Brisard</name>
-      <id>celestin</id>
-      <email>celestin at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Albert Davidson Chou</name>
-      <id>achou</id>
-      <email>achou at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Mark Diggory</name>
-      <id>mdiggory</id>
-      <email>mdiggory at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Robert Burrell Donkin</name>
-      <id>rdonkin</id>
-      <email>rdonkin at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Otmar Ertl</name>
-      <id>oertl</id>
-      <email>oertl at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Luc Maisonobe</name>
-      <id>luc</id>
-      <email>luc at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Tim O'Brien</name>
-      <id>tobrien</id>
-      <email>tobrien at apache dot org</email>
-    </developer>
-    <developer>
-      <name>J. Pietschmann</name>
-      <id>pietsch</id>
-      <email>j3322ptm at yahoo dot de</email>
-    </developer>
-    <developer>
-      <name>Dimitri Pourbaix</name>
-      <id>dimpbx</id>
-      <email>dimpbx at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Gilles Sadowski</name>
-      <id>erans</id>
-      <email>erans at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Greg Sterijevski</name>
-      <id>gregs</id>
-      <email>gregs at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Brent Worden</name>
-      <id>brentworden</id>
-      <email>brentworden at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Evan Ward</name>
-      <id>evanward</id>
-      <email>evanward at apache dot org</email>
-    </developer>
-    <developer>
-      <name>Rob Tompkins</name>
-      <id>chtompki</id>
-      <email>chtompki at apache dot org</email>
-    </developer>
-  </developers>
-  <contributors>
-    <contributor>
-      <name>Eldar Agalarov</name>
-    </contributor>
-    <contributor>
-      <name>Tim Allison</name>
-    </contributor>
-    <contributor>
-      <name>C. Scott Ananian</name>
-    </contributor>
-    <contributor>
-      <name>Mark Anderson</name>
-    </contributor>
-    <contributor>
-      <name>Peter Andrews</name>
-    </contributor>
-    <contributor>
-      <name>R&#233;mi Arntzen</name>
-    </contributor>
-    <contributor>
-      <name>Matt Adereth</name>
-    </contributor>
-    <contributor>
-      <name>Jared Becksfort</name>
-    </contributor>
-    <contributor>
-      <name>Michael Bjorkegren</name>
-    </contributor>
-    <contributor>
-      <name>Brian Bloniarz</name>
-    </contributor>
-    <contributor>
-      <name>John Bollinger</name>
-    </contributor>
-    <contributor>
-      <name>Cyril Briquet</name>
-    </contributor>
-    <contributor>
-      <name>Dave Brosius</name>
-    </contributor>
-    <contributor>
-      <name>Dan Checkoway</name>
-    </contributor>
-    <contributor>
-      <name>Anders Conbere</name>
-    </contributor>
-    <contributor>
-      <name>Charles Cooper</name>
-    </contributor>
-    <contributor>
-      <name>Paul Cowan</name>
-    </contributor>
-    <contributor>
-      <name>Benjamin Croizet</name>
-    </contributor>
-    <contributor>
-      <name>Larry Diamond</name>
-    </contributor>
-    <contributor>
-      <name>Aleksei Dievskii</name>
-    </contributor>
-    <contributor>
-      <name>Rodrigo di Lorenzo Lopes</name>
-    </contributor>
-    <contributor>
-      <name>Hasan Diwan</name>
-    </contributor>
-    <contributor>
-      <name>Ted Dunning</name>
-    </contributor>
-    <contributor>
-      <name>Ole Ersoy</name>
-    </contributor>
-    <contributor>
-      <name>Ajo Fod</name>
-    </contributor>
-    <contributor>
-      <name>John Gant</name>
-    </contributor>
-    <contributor>
-      <name>Ken Geis</name>
-    </contributor>
-    <contributor>
-      <name>Hank Grabowski</name>
-    </contributor>
-    <contributor>
-      <name>Bernhard Gr&#252;newaldt</name>
-    </contributor>
-    <contributor>
-      <name>Elliotte Rusty Harold</name>
-    </contributor>
-    <contributor>
-      <name>Dennis Hendriks</name>
-    </contributor>
-    <contributor>
-      <name>Reid Hochstedler</name>
-    </contributor>
-    <contributor>
-      <name>Matthias Hummel</name>
-    </contributor>
-    <contributor>
-      <name>Curtis Jensen</name>
-    </contributor>
-    <contributor>
-      <name>Bruce A Johnson</name>
-    </contributor>
-    <contributor>
-      <name>Ismael Juma</name>
-    </contributor>
-    <contributor>
-      <name>Eugene Kirpichov</name>
-    </contributor>
-    <contributor>
-      <name>Oleksandr Kornieiev</name>
-    </contributor>
-    <contributor>
-      <name>Piotr Kochanski</name>
-    </contributor>
-    <contributor>
-      <name>Sergei Lebedev</name>
-    </contributor>
-    <contributor>
-      <name>Bob MacCallum</name>
-    </contributor>
-    <contributor>
-      <name>Jake Mannix</name>
-    </contributor>
-    <contributor>
-      <name>Benjamin McCann</name>
-    </contributor>
-    <contributor>
-      <name>Patrick Meyer</name>
-    </contributor>
-    <contributor>
-      <name>J. Lewis Muir</name>
-    </contributor>
-    <contributor>
-      <name>Venkatesha Murthy</name>
-    </contributor>
-    <contributor>
-      <name>Thomas Neidhart</name>
-    </contributor>
-    <contributor>
-      <name>Christopher Nix</name>
-    </contributor>
-    <contributor>
-      <name>Fredrik Norin</name>
-    </contributor>
-    <contributor>
-      <name>Sean Owen</name>
-    </contributor>
-    <contributor>
-      <name>Sujit Pal</name>
-    </contributor>
-    <contributor>
-      <name>Todd C. Parnell</name>
-    </contributor>
-    <contributor>
-      <name>Qualtagh</name>
-    </contributor>
-    <contributor>
-      <name>Andreas Rieger</name>
-    </contributor>
-    <contributor>
-      <name>S&#233;bastien Riou</name>
-    </contributor>
-    <contributor>
-      <name>Karl Richter</name>
-    </contributor>
-    <contributor>
-      <name>Benedikt Ritter</name>
-    </contributor>
-    <contributor>
-      <name>Bill Rossi</name>
-    </contributor>
-    <contributor>
-      <name>Matthew Rowles</name>
-    </contributor>
-    <contributor>
-      <name>Pavel Ryzhov</name>
-    </contributor>
-    <contributor>
-      <name>Joni Salonen</name>
-    </contributor>
-    <contributor>
-      <name>Michael Saunders</name>
-    </contributor>
-    <contributor>
-      <name>Thorsten Schaefer</name>
-    </contributor>
-    <contributor>
-      <name>Christopher Schuck</name>
-    </contributor>
-    <contributor>
-      <name>Christian Semrau</name>
-    </contributor>
-    <contributor>
-      <name>David Stefka</name>
-    </contributor>
-    <contributor>
-      <name>Mauro Talevi</name>
-    </contributor>
-    <contributor>
-      <name>Radoslav Tsvetkov</name>
-    </contributor>
-    <contributor>
-      <name>Kim van der Linde</name>
-    </contributor>
-    <contributor>
-      <name>Alexey Volkov</name>
-    </contributor>
-    <contributor>
-      <name>Andrew Waterman</name>
-    </contributor>
-    <contributor>
-      <name>J&#246;rg Weimar</name>
-    </contributor>
-    <contributor>
-      <name>Christian Winter</name>
-    </contributor>
-    <contributor>
-      <name>Piotr Wydrych</name>
-    </contributor>
-    <contributor>
-      <name>Xiaogang Zhang</name>
-    </contributor>
-    <contributor>
-      <name>Chris Popp</name>
-    </contributor>
-  </contributors>
+    <developers>
+        <developer>
+            <name>Mikkel Meyer Andersen</name>
+            <id>mikl</id>
+            <email>mikl at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Bill Barker</name>
+            <id>billbarker</id>
+            <email>billbarker at apache dot org</email>
+        </developer>
+        <developer>
+            <name>S&#233;bastien Brisard</name>
+            <id>celestin</id>
+            <email>celestin at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Albert Davidson Chou</name>
+            <id>achou</id>
+            <email>achou at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Mark Diggory</name>
+            <id>mdiggory</id>
+            <email>mdiggory at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Robert Burrell Donkin</name>
+            <id>rdonkin</id>
+            <email>rdonkin at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Otmar Ertl</name>
+            <id>oertl</id>
+            <email>oertl at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Luc Maisonobe</name>
+            <id>luc</id>
+            <email>luc at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Tim O'Brien</name>
+            <id>tobrien</id>
+            <email>tobrien at apache dot org</email>
+        </developer>
+        <developer>
+            <name>J. Pietschmann</name>
+            <id>pietsch</id>
+            <email>j3322ptm at yahoo dot de</email>
+        </developer>
+        <developer>
+            <name>Dimitri Pourbaix</name>
+            <id>dimpbx</id>
+            <email>dimpbx at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Gilles Sadowski</name>
+            <id>erans</id>
+            <email>erans at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Greg Sterijevski</name>
+            <id>gregs</id>
+            <email>gregs at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Brent Worden</name>
+            <id>brentworden</id>
+            <email>brentworden at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Evan Ward</name>
+            <id>evanward</id>
+            <email>evanward at apache dot org</email>
+        </developer>
+        <developer>
+            <name>Rob Tompkins</name>
+            <id>chtompki</id>
+            <email>chtompki at apache dot org</email>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>Eldar Agalarov</name>
+        </contributor>
+        <contributor>
+            <name>Tim Allison</name>
+        </contributor>
+        <contributor>
+            <name>C. Scott Ananian</name>
+        </contributor>
+        <contributor>
+            <name>Mark Anderson</name>
+        </contributor>
+        <contributor>
+            <name>Peter Andrews</name>
+        </contributor>
+        <contributor>
+            <name>R&#233;mi Arntzen</name>
+        </contributor>
+        <contributor>
+            <name>Matt Adereth</name>
+        </contributor>
+        <contributor>
+            <name>Jared Becksfort</name>
+        </contributor>
+        <contributor>
+            <name>Michael Bjorkegren</name>
+        </contributor>
+        <contributor>
+            <name>Brian Bloniarz</name>
+        </contributor>
+        <contributor>
+            <name>John Bollinger</name>
+        </contributor>
+        <contributor>
+            <name>Cyril Briquet</name>
+        </contributor>
+        <contributor>
+            <name>Dave Brosius</name>
+        </contributor>
+        <contributor>
+            <name>Dan Checkoway</name>
+        </contributor>
+        <contributor>
+            <name>Anders Conbere</name>
+        </contributor>
+        <contributor>
+            <name>Charles Cooper</name>
+        </contributor>
+        <contributor>
+            <name>Paul Cowan</name>
+        </contributor>
+        <contributor>
+            <name>Benjamin Croizet</name>
+        </contributor>
+        <contributor>
+            <name>Larry Diamond</name>
+        </contributor>
+        <contributor>
+            <name>Aleksei Dievskii</name>
+        </contributor>
+        <contributor>
+            <name>Rodrigo di Lorenzo Lopes</name>
+        </contributor>
+        <contributor>
+            <name>Hasan Diwan</name>
+        </contributor>
+        <contributor>
+            <name>Ted Dunning</name>
+        </contributor>
+        <contributor>
+            <name>Ole Ersoy</name>
+        </contributor>
+        <contributor>
+            <name>Ajo Fod</name>
+        </contributor>
+        <contributor>
+            <name>John Gant</name>
+        </contributor>
+        <contributor>
+            <name>Ken Geis</name>
+        </contributor>
+        <contributor>
+            <name>Hank Grabowski</name>
+        </contributor>
+        <contributor>
+            <name>Bernhard Gr&#252;newaldt</name>
+        </contributor>
+        <contributor>
+            <name>Elliotte Rusty Harold</name>
+        </contributor>
+        <contributor>
+            <name>Dennis Hendriks</name>
+        </contributor>
+        <contributor>
+            <name>Reid Hochstedler</name>
+        </contributor>
+        <contributor>
+            <name>Matthias Hummel</name>
+        </contributor>
+        <contributor>
+            <name>Curtis Jensen</name>
+        </contributor>
+        <contributor>
+            <name>Bruce A Johnson</name>
+        </contributor>
+        <contributor>
+            <name>Ismael Juma</name>
+        </contributor>
+        <contributor>
+            <name>Eugene Kirpichov</name>
+        </contributor>
+        <contributor>
+            <name>Oleksandr Kornieiev</name>
+        </contributor>
+        <contributor>
+            <name>Piotr Kochanski</name>
+        </contributor>
+        <contributor>
+            <name>Sergei Lebedev</name>
+        </contributor>
+        <contributor>
+            <name>Bob MacCallum</name>
+        </contributor>
+        <contributor>
+            <name>Jake Mannix</name>
+        </contributor>
+        <contributor>
+            <name>Benjamin McCann</name>
+        </contributor>
+        <contributor>
+            <name>Patrick Meyer</name>
+        </contributor>
+        <contributor>
+            <name>J. Lewis Muir</name>
+        </contributor>
+        <contributor>
+            <name>Venkatesha Murthy</name>
+        </contributor>
+        <contributor>
+            <name>Thomas Neidhart</name>
+        </contributor>
+        <contributor>
+            <name>Christopher Nix</name>
+        </contributor>
+        <contributor>
+            <name>Fredrik Norin</name>
+        </contributor>
+        <contributor>
+            <name>Sean Owen</name>
+        </contributor>
+        <contributor>
+            <name>Sujit Pal</name>
+        </contributor>
+        <contributor>
+            <name>Todd C. Parnell</name>
+        </contributor>
+        <contributor>
+            <name>Qualtagh</name>
+        </contributor>
+        <contributor>
+            <name>Andreas Rieger</name>
+        </contributor>
+        <contributor>
+            <name>S&#233;bastien Riou</name>
+        </contributor>
+        <contributor>
+            <name>Karl Richter</name>
+        </contributor>
+        <contributor>
+            <name>Benedikt Ritter</name>
+        </contributor>
+        <contributor>
+            <name>Bill Rossi</name>
+        </contributor>
+        <contributor>
+            <name>Matthew Rowles</name>
+        </contributor>
+        <contributor>
+            <name>Pavel Ryzhov</name>
+        </contributor>
+        <contributor>
+            <name>Joni Salonen</name>
+        </contributor>
+        <contributor>
+            <name>Michael Saunders</name>
+        </contributor>
+        <contributor>
+            <name>Thorsten Schaefer</name>
+        </contributor>
+        <contributor>
+            <name>Christopher Schuck</name>
+        </contributor>
+        <contributor>
+            <name>Christian Semrau</name>
+        </contributor>
+        <contributor>
+            <name>David Stefka</name>
+        </contributor>
+        <contributor>
+            <name>Mauro Talevi</name>
+        </contributor>
+        <contributor>
+            <name>Radoslav Tsvetkov</name>
+        </contributor>
+        <contributor>
+            <name>Kim van der Linde</name>
+        </contributor>
+        <contributor>
+            <name>Alexey Volkov</name>
+        </contributor>
+        <contributor>
+            <name>Andrew Waterman</name>
+        </contributor>
+        <contributor>
+            <name>J&#246;rg Weimar</name>
+        </contributor>
+        <contributor>
+            <name>Christian Winter</name>
+        </contributor>
+        <contributor>
+            <name>Piotr Wydrych</name>
+        </contributor>
+        <contributor>
+            <name>Xiaogang Zhang</name>
+        </contributor>
+        <contributor>
+            <name>Chris Popp</name>
+        </contributor>
+    </contributors>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-statistics-distribution</artifactId>
-      <version>0.1-SNAPSHOT</version>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-statistics-distribution</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-numbers-core</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-numbers-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-numbers-complex</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-numbers-complex</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-numbers-complex-streams</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-numbers-complex-streams</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-numbers-gamma</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-numbers-gamma</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-numbers-combinatorics</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-numbers-combinatorics</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-numbers-arrays</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-numbers-arrays</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-numbers-angle</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-numbers-angle</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-rng-client-api</artifactId>
-      <version>1.1</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-rng-client-api</artifactId>
+            <version>1.1</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-rng-simple</artifactId>
-      <version>1.1</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-rng-simple</artifactId>
+            <version>1.1</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-rng-sampling</artifactId>
-      <version>1.1</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-rng-sampling</artifactId>
+            <version>1.1</version>
+        </dependency>
 
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-  <properties>
+    <profiles>
+        <profile>
+            <id>jdk8</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.moditect</groupId>
+                        <artifactId>moditect-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>add-module-infos</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>add-module-info</goal>
+                                </goals>
+                                <configuration>
+                                    <overwriteExistingFiles>true</overwriteExistingFiles>
+                                    <module>
+                                        <moduleInfoFile>
+                                            src/jre11/java/module-info.java
+                                        </moduleInfoFile>
+                                    </module>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
-  </properties>
 
-  <build>
-      <plugins>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <configuration>
-              <target>
-                <jar destfile="${project.build.directory}/${project.artifactId}-${project.version}-tools.jar">
-                  <metainf dir="${basedir}" includes="NOTICE.txt,LICENSE.txt" />
-                  <manifest>
-                    <attribute name="Specification-Title" value="${project.name} Tools" />
-                    <attribute name="Implementation-Title" value="${project.name} Tools" />
-                    <attribute name="Implementation-Vendor" value="${project.organization.name}" />
-                    <attribute name="Implementation-Version" value="${project.version}" />
-                    <attribute name="Implementation-Vendor-Id" value="org.apache" />
-                    <attribute name="Implementation-Build" value="${implementation.build}"/>
-                    <attribute name="X-Compile-Source-JDK" value="${maven.compiler.source}" />
-                    <attribute name="X-Compile-Target-JDK" value="${maven.compiler.target}" />
-                  </manifest>
-                  <fileset dir="${project.build.directory}/test-classes"
-                           includes="org/apache/commons/math4/PerfTestUtils*" />
-                </jar>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <!--  Attaches the commons-math4 tools JAR to the Maven lifecycle
-            to ensure they will be signed and deployed as normal -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.7</version>
-        <executions>
-          <execution>
-            <id>attach-artifacts</id>
-            <phase>package</phase>
-            <goals>
-              <goal>attach-artifact</goal>
-            </goals>
-            <configuration>
-              <artifacts>
-                <artifact>
-                  <file>${project.build.directory}/${project.artifactId}-${project.version}-tools.jar</file>
-                  <type>jar</type>
-                  <classifier>tools</classifier>
-                </artifact>
-              </artifacts>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!--  MathJax -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <!-- Enable MathJax -->
-          <additionalOptions>${doclint.javadoc.qualifier} ${allowscript.javadoc.qualifier} -header '&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/${math.mathjax.version}/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt;'</additionalOptions>
-          <!-- <aggregate>true</aggregate> -->
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <reporting>
-    <plugins>
-    </plugins>
-  </reporting>
-
-  <profiles>
-
-  </profiles>
 </project>

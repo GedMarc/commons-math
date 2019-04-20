@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.math3.util.Precision;
 import org.apache.commons.math4.exception.MathArithmeticException;
 import org.apache.commons.math4.exception.MathIllegalArgumentException;
 import org.apache.commons.math4.exception.util.ExceptionContext;
@@ -62,7 +61,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(polySet.getSize());
         Assert.assertEquals(0.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(Cartesian3D.NaN, (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -83,7 +82,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(new BSPTree<Euclidean3D>(Boolean.FALSE), TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(0.0, polySet.getSize(), TEST_TOLERANCE);
         Assert.assertEquals(0.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(Cartesian3D.NaN, (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -109,7 +108,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(polySet.getSize());
         GeometryTestUtils.assertPositiveInfinity(polySet.getBoundarySize());
         GeometryTestUtils.assertVectorEquals(Cartesian3D.NaN, (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -135,7 +134,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = (PolyhedronsSet) new RegionFactory<Euclidean3D>().getComplement(box);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(polySet.getSize());
         Assert.assertEquals(6, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(Cartesian3D.NaN, (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -160,7 +159,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(polySet.getSize());
         Assert.assertEquals(0.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(Cartesian3D.NaN, (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -177,7 +176,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(1.0, polySet.getSize(), TEST_TOLERANCE);
         Assert.assertEquals(6.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(Cartesian3D.ZERO, (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -242,7 +241,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(2.0, polySet.getSize(), TEST_TOLERANCE);
         Assert.assertEquals(12.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(new Cartesian3D(1, 0, 0), (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -270,7 +269,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(2.0, polySet.getSize(), TEST_TOLERANCE);
         Assert.assertEquals(10.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(new Cartesian3D(0.5, 0, 0), (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -298,7 +297,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, tolerance);
 
         // assert
-        Assert.assertEquals(tolerance, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(tolerance, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(2.0, polySet.getSize(), tolerance);
         Assert.assertEquals(10.0, polySet.getBoundarySize(), tolerance);
         GeometryTestUtils.assertVectorEquals(new Cartesian3D(0.5 + 5e-8, 0, 0), (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -325,7 +324,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(2.0, polySet.getSize(), TEST_TOLERANCE);
         Assert.assertEquals(12.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(new Cartesian3D(0.5, 0.5, 0), (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);
@@ -354,7 +353,7 @@ public class PolyhedronsSetTest {
         PolyhedronsSet polySet = new PolyhedronsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, polySet.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(2.0, polySet.getSize(), TEST_TOLERANCE);
         Assert.assertEquals(12.0, polySet.getBoundarySize(), TEST_TOLERANCE);
         GeometryTestUtils.assertVectorEquals(new Cartesian3D(0.5, 0.5, 0.5), (Cartesian3D) polySet.getBarycenter(), TEST_TOLERANCE);

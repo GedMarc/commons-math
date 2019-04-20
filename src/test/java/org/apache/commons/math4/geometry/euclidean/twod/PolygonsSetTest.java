@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.math3.util.Precision;
 import org.apache.commons.math4.exception.MathIllegalArgumentException;
 import org.apache.commons.math4.geometry.GeometryTestUtils;
 import org.apache.commons.math4.geometry.euclidean.oned.Cartesian1D;
@@ -48,7 +47,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = new PolygonsSet(TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(poly.getSize());
         Assert.assertEquals(0.0, poly.getBoundarySize(), TEST_TOLERANCE);
         Assert.assertEquals(0, poly.getVertices().length);
@@ -74,7 +73,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = (PolygonsSet) new RegionFactory<Euclidean2D>().getComplement(new PolygonsSet(TEST_TOLERANCE));
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertEquals(0.0, poly.getSize(), TEST_TOLERANCE);
         Assert.assertEquals(0.0, poly.getBoundarySize(), TEST_TOLERANCE);
         Assert.assertEquals(0, poly.getVertices().length);
@@ -107,7 +106,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = new PolygonsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(poly.getSize());
         GeometryTestUtils.assertPositiveInfinity(poly.getBoundarySize());
         Assert.assertFalse(poly.isEmpty());
@@ -145,7 +144,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = new PolygonsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(poly.getSize());
         GeometryTestUtils.assertPositiveInfinity(poly.getBoundarySize());
         Assert.assertFalse(poly.isEmpty());
@@ -183,7 +182,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = new PolygonsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(poly.getSize());
         GeometryTestUtils.assertPositiveInfinity(poly.getBoundarySize());
         Assert.assertFalse(poly.isEmpty());
@@ -229,7 +228,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = new PolygonsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(poly.getSize());
         GeometryTestUtils.assertPositiveInfinity(poly.getBoundarySize());
         Assert.assertFalse(poly.isEmpty());
@@ -276,7 +275,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = new PolygonsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(poly.getSize());
         GeometryTestUtils.assertPositiveInfinity(poly.getBoundarySize());
         Assert.assertFalse(poly.isEmpty());
@@ -326,7 +325,7 @@ public class PolygonsSetTest {
         PolygonsSet poly = new PolygonsSet(boundaries, TEST_TOLERANCE);
 
         // assert
-        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(TEST_TOLERANCE, poly.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
         GeometryTestUtils.assertPositiveInfinity(poly.getSize());
         GeometryTestUtils.assertPositiveInfinity(poly.getBoundarySize());
         Assert.assertFalse(poly.isEmpty());
@@ -1833,8 +1832,8 @@ public class PolygonsSetTest {
             ptB = b[(i + bStartIdx) % len];
 
             if (!((ptA == null && ptB == null) ||
-                    (Precision.equals(ptA.getX(), ptB.getX(), tolerance) &&
-                     Precision.equals(ptA.getY(), ptB.getY(), tolerance)))) {
+                    (org.apache.commons.numbers.core.Precision.equals(ptA.getX(), ptB.getX(), tolerance) &&
+                     org.apache.commons.numbers.core.Precision.equals(ptA.getY(), ptB.getY(), tolerance)))) {
                 return false;
             }
         }

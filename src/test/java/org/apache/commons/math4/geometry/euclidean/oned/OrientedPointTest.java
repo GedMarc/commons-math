@@ -17,7 +17,6 @@
 package org.apache.commons.math4.geometry.euclidean.oned;
 
 import org.junit.Test;
-import org.apache.commons.math3.util.Precision;
 import org.apache.commons.math4.geometry.GeometryTestUtils;
 import org.apache.commons.math4.geometry.Point;
 import org.apache.commons.math4.geometry.Vector;
@@ -31,9 +30,9 @@ public class OrientedPointTest {
         OrientedPoint pt = new OrientedPoint(new Cartesian1D(2.0), true, 1e-5);
 
         // assert
-        Assert.assertEquals(2.0, pt.getLocation().getX(), Precision.EPSILON);
+        Assert.assertEquals(2.0, pt.getLocation().getX(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertTrue(pt.isDirect());
-        Assert.assertEquals(1e-5, pt.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(1e-5, pt.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 
     @Test
@@ -46,9 +45,9 @@ public class OrientedPointTest {
 
         // assert
         Assert.assertSame(orig, copy);
-        Assert.assertEquals(2.0, copy.getLocation().getX(), Precision.EPSILON);
+        Assert.assertEquals(2.0, copy.getLocation().getX(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertTrue(copy.isDirect());
-        Assert.assertEquals(1e-5, copy.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(1e-5, copy.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 
     @Test
@@ -57,13 +56,13 @@ public class OrientedPointTest {
         OrientedPoint pt = new OrientedPoint(new Cartesian1D(-1.0), true, 1e-5);
 
         // act/assert
-        Assert.assertEquals(-99, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-100)), Precision.EPSILON);
-        Assert.assertEquals(-1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-2)), Precision.EPSILON);
-        Assert.assertEquals(-0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.01)), Precision.EPSILON);
-        Assert.assertEquals(0.0, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.0)), Precision.EPSILON);
-        Assert.assertEquals(0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-0.99)), Precision.EPSILON);
-        Assert.assertEquals(1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(0)), Precision.EPSILON);
-        Assert.assertEquals(101, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(100)), Precision.EPSILON);
+        Assert.assertEquals(-99, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-100)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-2)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.01)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(0.0, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-0.99)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(101, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(100)), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 
     @Test
@@ -72,13 +71,13 @@ public class OrientedPointTest {
         OrientedPoint pt = new OrientedPoint(new Cartesian1D(-1.0), false, 1e-5);
 
         // act/assert
-        Assert.assertEquals(99, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-100)), Precision.EPSILON);
-        Assert.assertEquals(1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-2)), Precision.EPSILON);
-        Assert.assertEquals(0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.01)), Precision.EPSILON);
-        Assert.assertEquals(0.0, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.0)), Precision.EPSILON);
-        Assert.assertEquals(-0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-0.99)), Precision.EPSILON);
-        Assert.assertEquals(-1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(0)), Precision.EPSILON);
-        Assert.assertEquals(-101, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(100)), Precision.EPSILON);
+        Assert.assertEquals(99, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-100)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-2)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.01)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(0.0, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-1.0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-0.01, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(-0.99)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-1, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-101, pt.getOffset((Point<Euclidean1D>) new Cartesian1D(100)), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 
     @Test
@@ -87,13 +86,13 @@ public class OrientedPointTest {
         OrientedPoint pt = new OrientedPoint(new Cartesian1D(-1.0), true, 1e-5);
 
         // act/assert
-        Assert.assertEquals(-99, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-100)), Precision.EPSILON);
-        Assert.assertEquals(-1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-2)), Precision.EPSILON);
-        Assert.assertEquals(-0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.01)), Precision.EPSILON);
-        Assert.assertEquals(-0.0, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.0)), Precision.EPSILON);
-        Assert.assertEquals(0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-0.99)), Precision.EPSILON);
-        Assert.assertEquals(1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(0)), Precision.EPSILON);
-        Assert.assertEquals(101, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(100)), Precision.EPSILON);
+        Assert.assertEquals(-99, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-100)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-2)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.01)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-0.0, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-0.99)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(101, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(100)), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 
     @Test
@@ -102,13 +101,13 @@ public class OrientedPointTest {
         OrientedPoint pt = new OrientedPoint(new Cartesian1D(-1.0), false, 1e-5);
 
         // act/assert
-        Assert.assertEquals(99, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-100)), Precision.EPSILON);
-        Assert.assertEquals(1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-2)), Precision.EPSILON);
-        Assert.assertEquals(0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.01)), Precision.EPSILON);
-        Assert.assertEquals(0.0, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.0)), Precision.EPSILON);
-        Assert.assertEquals(-0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-0.99)), Precision.EPSILON);
-        Assert.assertEquals(-1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(0)), Precision.EPSILON);
-        Assert.assertEquals(-101, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(100)), Precision.EPSILON);
+        Assert.assertEquals(99, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-100)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-2)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.01)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(0.0, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-1.0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-0.01, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(-0.99)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-101, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(100)), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 
     @Test
@@ -164,10 +163,10 @@ public class OrientedPointTest {
         OrientedPoint pt = new OrientedPoint(new Cartesian1D(1.0), true, 1e-5);
 
         // act/assert
-        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(-1.0))).getX(), Precision.EPSILON);
-        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(0.0))).getX(), Precision.EPSILON);
-        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(1.0))).getX(), Precision.EPSILON);
-        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(100.0))).getX(), Precision.EPSILON);
+        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(-1.0))).getX(), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(0.0))).getX(), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(1.0))).getX(), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(1.0, ((Cartesian1D) pt.project(new Cartesian1D(100.0))).getX(), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 
     @Test
@@ -179,11 +178,11 @@ public class OrientedPointTest {
         pt.revertSelf();
 
         // assert
-        Assert.assertEquals(2.0, pt.getLocation().getX(), Precision.EPSILON);
+        Assert.assertEquals(2.0, pt.getLocation().getX(), org.apache.commons.numbers.core.Precision.EPSILON);
         Assert.assertFalse(pt.isDirect());
-        Assert.assertEquals(1e-5, pt.getTolerance(), Precision.EPSILON);
+        Assert.assertEquals(1e-5, pt.getTolerance(), org.apache.commons.numbers.core.Precision.EPSILON);
 
-        Assert.assertEquals(1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(1.0)), Precision.EPSILON);
-        Assert.assertEquals(-1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(3.0)), Precision.EPSILON);
+        Assert.assertEquals(1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(1.0)), org.apache.commons.numbers.core.Precision.EPSILON);
+        Assert.assertEquals(-1, pt.getOffset((Vector<Euclidean1D>) new Cartesian1D(3.0)), org.apache.commons.numbers.core.Precision.EPSILON);
     }
 }

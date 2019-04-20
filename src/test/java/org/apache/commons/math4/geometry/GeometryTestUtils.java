@@ -16,32 +16,15 @@
  */
 package org.apache.commons.math4.geometry;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
-import org.apache.commons.math3.util.FastMath;
-import org.apache.commons.math4.geometry.euclidean.oned.Cartesian1D;
-import org.apache.commons.math4.geometry.euclidean.oned.Euclidean1D;
-import org.apache.commons.math4.geometry.euclidean.oned.IntervalsSet;
-import org.apache.commons.math4.geometry.euclidean.oned.OrientedPoint;
-import org.apache.commons.math4.geometry.euclidean.oned.SubOrientedPoint;
-import org.apache.commons.math4.geometry.euclidean.oned.Vector1D;
-import org.apache.commons.math4.geometry.euclidean.threed.Cartesian3D;
-import org.apache.commons.math4.geometry.euclidean.threed.Euclidean3D;
-import org.apache.commons.math4.geometry.euclidean.threed.Plane;
-import org.apache.commons.math4.geometry.euclidean.threed.SubPlane;
-import org.apache.commons.math4.geometry.euclidean.threed.Vector3D;
-import org.apache.commons.math4.geometry.euclidean.twod.Cartesian2D;
-import org.apache.commons.math4.geometry.euclidean.twod.Euclidean2D;
+import org.apache.commons.math4.geometry.euclidean.oned.*;
+import org.apache.commons.math4.geometry.euclidean.threed.*;
 import org.apache.commons.math4.geometry.euclidean.twod.Line;
-import org.apache.commons.math4.geometry.euclidean.twod.PolygonsSet;
 import org.apache.commons.math4.geometry.euclidean.twod.SubLine;
-import org.apache.commons.math4.geometry.euclidean.twod.Vector2D;
-import org.apache.commons.math4.geometry.partitioning.BSPTree;
-import org.apache.commons.math4.geometry.partitioning.BSPTreeVisitor;
-import org.junit.Assert;
+import org.apache.commons.math4.geometry.euclidean.twod.*;
+import org.apache.commons.math4.geometry.partitioning.*;
+import org.junit.*;
+
+import java.util.*;
 
 /** Class containing various geometry-related test utilities.
  * @since 4.0
@@ -295,7 +278,7 @@ public class GeometryTestUtils {
             Line line = (Line) cut.getHyperplane();
             IntervalsSet remainingRegion = (IntervalsSet) cut.getRemainingRegion();
 
-            write("cut = { angle: " + FastMath.toDegrees(line.getAngle()) + ", origin: " + line.toSpace(Cartesian1D.ZERO) + "}");
+            write("cut = { angle: " + org.apache.commons.math4.util.FastMath.toDegrees(line.getAngle()) + ", origin: " + line.toSpace(Cartesian1D.ZERO) + "}");
             write(", remainingRegion: [");
 
             boolean isFirst = true;
