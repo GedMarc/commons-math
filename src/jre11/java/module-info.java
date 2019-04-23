@@ -1,18 +1,18 @@
 module org.apache.commons.math4 {
 	exports org.apache.commons.math4;
 
-	requires static commons.numbers.core;
+	/*requires static commons.numbers.core;
 	requires static commons.numbers.arrays;
-	requires static commons.numbers.combinatorics;
+	requires static commons.numbers.combinatorics;*/
 	requires static org.apache.commons.rng.sampling;
-	requires static commons.numbers.complex;
-	requires static commons.numbers.complex.streams;
+	/*requires static commons.numbers.complex;
+	requires static commons.numbers.complex.streams;*/
 	requires static org.apache.commons.rng.api;
-	requires static commons.statistics.distribution;
+	//requires static commons.statistics.distribution;
 	requires static org.apache.commons.rng.simple;
-	requires static commons.numbers.angle;
+	//requires static commons.numbers.angle;
 	requires static org.apache.commons.rng.core;
-	requires static commons.numbers.gamma;
+	//requires static commons.numbers.gamma;
 
 	exports org.apache.commons.math4.analysis;
 	exports org.apache.commons.math4.complex;
