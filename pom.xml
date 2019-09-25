@@ -24,7 +24,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jwebmp.jpms.thirdparty.commons</groupId>
+    <groupId>com.jwebmp.jpms.thirdparty</groupId>
     <artifactId>commons-math3</artifactId>
     <name>Apache Commons Math</name>
 
